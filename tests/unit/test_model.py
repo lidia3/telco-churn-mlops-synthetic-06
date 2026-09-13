@@ -4,9 +4,9 @@ Model quality gate tests  (Prompt 2 from slide 26).
 These tests train the XGBoost model ONCE (scope='module') and validate
 quality thresholds — exactly as described on slide 12.
 
-LAB 2 Scenario A: change  MIN_AUC = 0.99  to trigger
+LAB 2 Scenario A: change  MIN_AUC = 0.82  to trigger
     AssertionError: 0.887 < 0.99
-Then restore  MIN_AUC = 0.99  to fix.
+Then restore  MIN_AUC = 0.82  to fix.
 """
 
 from __future__ import annotations
@@ -25,7 +25,7 @@ from src.features.build_features import FEATURE_COLUMNS, TARGET_COLUMN, get_X_y
 
 # ── Quality gate thresholds (slide 12) ───────────────────────────────────────
 # LAB 2 Scenario A: change this to 0.99 → AssertionError, then restore 0.82
-MIN_AUC = 0.99
+MIN_AUC = 0.82
 MIN_F1 = 0.70
 MIN_PRECISION = 0.75
 # X excludes the target column from FEATURE_COLUMNS
